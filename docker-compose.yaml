@@ -86,7 +86,7 @@ services:
     - user 
     - rabbitmq
   frontend:
-    image: srinunaik/frontend:v2 
+    image: srinunaik208/frontend:v2 
     container_name: frontend
     depends_on:
      - catalogue 
