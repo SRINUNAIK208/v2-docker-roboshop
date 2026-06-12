@@ -1,6 +1,6 @@
 FROM maven:3-eclipse-temurin-21-alpine as builder 
 WORKDIR /opt/app 
-COPY src . 
+COPY src ./src
 COPY pom.xml .
 RUN mvn clean package 
 RUN mv target/shipping-*.jar shipping.jar
