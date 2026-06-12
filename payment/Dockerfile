@@ -9,8 +9,8 @@ RUN pip3 install --prefix=/install -r requirements.txt
 
 FROM python:3.15-rc-alpine 
 WORKDIR /opt/app 
-RUN apk add --no-cache pcre && \
-    addgroup -S roboshop && adduser -S roboshop -G roboshop 
+RUN apk add --no-cache pcre
+RUN  addgroup -S roboshop && adduser -S roboshop -G roboshop 
 COPY --from=builder --chown=roboshop:roboshop /install /usr/local 
 COPY --from=builder --chown=roboshop:roboshop /opt/app .
 USER roboshop
